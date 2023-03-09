@@ -61,6 +61,7 @@ public:
     virtual void endPass() {}
     virtual void registerNextCall(LAMMPS_NS::bigint /*step*/) {}
     virtual bool callRequired(LAMMPS_NS::bigint /*cstep*/) { return false; }
+    virtual ~ILoopCallbackCallable() {}
 };
 }
 
