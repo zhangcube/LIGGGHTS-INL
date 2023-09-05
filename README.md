@@ -2,203 +2,76 @@
 
 <img src="figs/fig_liggghts_inl_banner.png">
 
-**LIGGGHTS-INL** is a capability-extended adaptation of the LIGGGHTS Open Source Discrete Element Method (DEM) Particle Simulation Software based on LIGGGHTS release version 4.0.0.
+**LIGGGHTS-INL** is a capability-extended adaptation of the [LIGGGHTS](https://www.cfdem.com/media/DEM/docu/Manual.html) Open Source Discrete Element Method (DEM) Particle Simulation Software based on LIGGGHTS release version 4.0.0.
+
+**Why LIGGGHTS-INL?** The public version of LIGGGHTS DEM software, [**LIGGGHTS-PUBLIC**](https://github.com/CFDEMproject/LIGGGHTS-PUBLIC), is maintained by LIGGGHTS community users. LIGGGHTS-INL had been but is no longer a fork of LIGGGHTS-PUBLIC. LIGGGHTS-INL adopts some updates in LIGGGHTS-PUBLIC to fix bugs in the code and offers extended capabilities such as bonded-sphere model (or bonded-particle model in some literature), elastoplastic bond normal stiffness, and strain-hardening nonlinear normal contact model. Those capabilities have been implemented in LIGGGHTS-INL originally for biomass granular flow and structural biomechanics simulations, and can be used for broader applications upon adaptation.  For many common scenarios of granular flow simulations that do not require those specialized features, LIGGGHTS-INL can be used interchangeably with LIGGGHTS-PUBLIC, though some input command syntaxes have become different due to our independent maintenance. LIGGGHTS-INL will routinely release user tutorials and examples to improve user experience.
+
+## Installing LIGGGHTS-INL
+
+Supported operating systems: **Linux** and **macOS**. We provide [detailed instructions for installing LIGGGHTS-INL on the Linux Ubuntu LTS and macOS releases](/compile/README.md).
 
 ## Citing LIGGGHTS-INL
 
-If you are using results generated with LIGGGHTS-INL, please cite the following articles:
+Reference articles with results generated using LIGGGHTS-INL are listed below:
 
-* F. Chen, Y. Xia, J. Klinger, and Q. Chen, "Hopper discharge flow dynamics of milled pine and prediction of process upsets using the discrete element method." [*Powder Technology* 415 (2023): 118165.](https://doi.org/10.1016/j.powtec.2022.118165)
-* Q. Sun, Q. Chen, Y. Xia, F. Chen, J. Klinger, L. Ding, V. Thompson, "Reverse scaling of a bonded-sphere DEM model: Formulation and application to lignocellulosic biomass microstructures." [*Powder Technology* 409 (2022): 117797.](https://doi.org/10.1016/j.powtec.2022.117797)
-* W. Jin, Y. Lu, F. Chen, A. Hamed, N. Saha, J. L. Klinger, S. Dai, Q. Chen, Y. Xia, "On the fidelity of computational models for the flow of milled loblolly pine: A benchmark study on continuum-mechanics models and discrete-particle models." [*Frontiers in Energy Research, section Bioenergy and Biofuel* (2022).](https://doi.org/10.3389/fenrg.2022.855848)
-* A. Hamed, Y. Xia, N. Saha, J. Klinger, D. N. Lanning, and J. Dooley, "Flowability of Crumbler rotary shear size-reduced granular biomass: An experiment-informed modeling study on the angle of repose." [*Frontiers in Energy Research, section Bioenergy and Biofuel* (2022).](https://doi.org/10.3389/fenrg.2022.859248)
-* F. Chen, Y. Xia, J. Klinger, and Q. Chen, "A set of hysteretic nonlinear contact models for DEM: Theory, formulation, and application for lignocellulosic biomass." [*Powder Technology* 397 (2022): 117100.](https://doi.org/10.1016/j.powtec.2021.117100)
-* Y. Guo, Q. Chen, Y. Xia, J. Klinger, and V. Thompson. "A nonlinear elasto-plastic bond model for the discrete element modeling of woody biomass particles." [*Powder Technology* 385 (2021): 557-571.](https://doi.org/10.1016/j.powtec.2021.03.008)
-* Y. Guo, Q. Chen, Y. Xia, T. Westover, S. Eksioglu, and M. Roni. "Discrete element modeling of switchgrass particles under compression and rotational shear." [*Biomass & Bioenergy* 141 (2020): 105649.](https://doi.org/10.1016/j.biombioe.2020.105649)
-* Y. Xia, Z. Lai, T. Westover, J. Klinger, H. Huang, and Q. Chen. "Discrete element modeling of deformable pinewood chips in cyclic loading test." [*Powder Technology* 345 (2019): 1-14.](https://doi.org/10.1016/j.powtec.2018.12.072)
+**Static angle of repose**
+
+* A. Hamed et al. Flowability of Crumbler rotary shear size-reduced granular biomass: An experiment-informed modeling study on the angle of repose. [*Frontiers in Energy Research, section Bioenergy and Biofuel* (2022).](https://doi.org/10.3389/fenrg.2022.859248) (<span style="color: green;">**Open Access**</span>)
+
+**Uniaxial loading test**
+
+* F. Chen et al. A set of hysteretic nonlinear contact models for DEM: Theory, formulation, and application for lignocellulosic biomass. [*Powder Technology* 397 (2022): 117100.](https://doi.org/10.1016/j.powtec.2021.117100) (Download [Authors' manuscript PDF](https://www.researchgate.net/publication/357393650_A_set_of_hysteretic_nonlinear_contact_models_for_DEM_Theory_formulation_and_application_for_lignocellulosic_biomass))
+* Y. Xia et al. Discrete element modeling of deformable pinewood chips in cyclic loading test. [*Powder Technology* 345 (2019): 1-14.](https://doi.org/10.1016/j.powtec.2018.12.072) (Download [Authors' manuscript PDF](https://www.researchgate.net/publication/329869479_Discrete_element_modeling_of_deformable_pinewood_chips_in_cyclic_loading_test))
+
+**Ring shear test**
+
+* Y. Guo et al. Discrete element modeling of switchgrass particles under compression and rotational shear. [*Biomass & Bioenergy* 141 (2020): 105649.](https://doi.org/10.1016/j.biombioe.2020.105649) (Download [Authors' manuscript PDF](https://www.researchgate.net/publication/342170187_Discrete_element_modeling_of_switchgrass_particles_under_compression_and_rotational_shear))
+
+**Hopper discharge flow**
+
+* Z. Lai et al. Discrete element modeling of granular hopper flow of irregular-shaped deformable particles. [*Advanced Powder Technology* 34 (2023): 104106.](https://doi.org/10.1016/j.apt.2023.104106) (Download [Authors' manuscript PDF](https://www.researchgate.net/publication/371447845_Discrete_element_modeling_of_granular_hopper_flow_of_irregular-shaped_deformable_particles))
+* F. Chen et al. Hopper discharge flow dynamics of milled pine and prediction of process upsets using the discrete element method. [*Powder Technology* 415 (2023): 118165.](https://doi.org/10.1016/j.powtec.2022.118165) (Download [Authors' manuscript PDF](https://www.researchgate.net/publication/366219764_Hopper_discharge_flow_dynamics_of_milled_pine_and_prediction_of_process_upsets_using_the_discrete_element_method))
+
+**Screw feeder**
+
+* A. Hamed et al. Particle size and shape effect of Crumbler® rotary shear-milled granular woody biomass on the performance of Acrison® screw feeder: A computational and experimental investigation. [*Powder Technology* 427 (2023): 118707.](https://doi.org/10.1016/j.powtec.2023.118707) (<span style="color: green;">**Open Access**</span>)
+
+**FEM vs. DEM: granular flow benchmark case studies**
+
+* W. Jin et al. On the fidelity of computational models for the flow of milled loblolly pine: A benchmark study on continuum-mechanics models and discrete-particle models. [*Frontiers in Energy Research, section Bioenergy and Biofuel* (2022).](https://doi.org/10.3389/fenrg.2022.855848) (<span style="color: green;">**Open Access**</span>)
+
+**Structural biomechanics**
+
+* Q. Sun et al. Reverse scaling of a bonded-sphere DEM model: Formulation and application to lignocellulosic biomass microstructures. [*Powder Technology* 409 (2022): 117797.](https://doi.org/10.1016/j.powtec.2022.117797) (Download [Authors' manuscript PDF](https://www.researchgate.net/publication/362419823_Reverse_scaling_of_a_bonded-sphere_DEM_model_Formulation_and_application_to_lignocellulosic_biomass_microstructures))
+* Y. Guo et al. A nonlinear elasto-plastic bond model for the discrete element modeling of woody biomass particles. [*Powder Technology* 385 (2021): 557-571.](https://doi.org/10.1016/j.powtec.2021.03.008) (Download [Authors' manuscript PDF](https://www.researchgate.net/publication/350048423_A_nonlinear_elasto-plastic_bond_model_for_the_discrete_element_modeling_of_woody_biomass_particles))
+
+## Tutorials for Granular Material Flow Characterization
+
+We are in the process of releasing tutorials for beginners to use DEM simulation as a numerical tool for granular material flow characterization. Examples can be found here: [LIGGGHTS-INL tutorials](/examples/LIGGGHTS/INL_tutorials).
+
+## LIGGGHTS-INL Documentation and Extended Capabilities
+
+Refer to the [LIGGGHTS-PUBLIC documentation](https://www.cfdem.com/media/DEM/docu/Manual.html) for the common **LIGGGHTS** features. Documentation of some of the **LIGGGHTS-INL** extended capabilities is in this repository, e.g., the bonded-sphere model ([HTML documentation](/doc/gran_cohesion_bond.html) and [user examples](/examples/LIGGGHTS/INL/cohesive_bond)).
+
+
+**LIGGGHTS-INL** provides original **nonlinear contact and bond stiffness models**. No user manual has yet been created for these models. Refer to the listed articles for more information. User examples are introduced below:
+
+* **Strain-hardening nonlinear normal contact**: [An example of collision between two spherical particles](/examples/LIGGGHTS/INL/normal_contact_hysteretic_nonlinear1)
+<img src="figs/fig_nonlinear_contact.png">
+
+* **Elastoplastic bond normal stiffness** (a): [An example of macro-fiber made of five bonded spheres](/examples/LIGGGHTS/INL/cohesive_bond_nonlinear_compression/chain_bending_mm_2)
+<img src="figs/fig_string_mm.png">
+
+* **Elastoplastic bond normal stiffness** (b): [An example of microfiber made of five bonded spheres](/examples/LIGGGHTS/INL/cohesive_bond_nonlinear_compression/chain_bending_um_2)
+<img src="figs/fig_string_um.png">
+
+* **Micro-biomechanics**: [An example of compression on a pine wood particle microstructure](/examples/LIGGGHTS/INL/microstructure_compression)
+<img src="figs/fig_microstructure_compression.png">
 
 ## Auxiliary 3D Image Processing and Analysis Tools
 
 - A set of MATLAB codes for 3D image-based porosity analysis: [tools/PorosityAnalysis3D](tools/PorosityAnalysis3D)
 - A concise FIJI user tutorial for 3D image binarization: [tools/FIJI](tools/FIJI)
-
-## LIGGGHTS-INL Documentation
-
-Users are referred to the **LIGGGHTS-PUBLIC** documentation ([https://www.cfdem.com/media/DEM/docu/Manual.html](https://www.cfdem.com/media/DEM/docu/Manual.html)) for most of the common **LIGGGHTS** features. Documentation of some of the extended capabilities in **LIGGGHTS-INL** (e.g., the bonded-sphere model) can be found in this repository. Examples are provided below.
-
-* Documentation of the bonded-sphere model:
-`<repository>/doc/gran_cohesion_bond.html`
-* User examples of the bonded-sphere model:
-`<repository>/examples/LIGGGHTS/INL/cohesive_bond`
-
-## Examples of Extended Capabilities in LIGGGHTS-INL
-
-The following examples of nonlinear contact and bond stiffness models in LIGGGHTS-INL are extended from LIGGGHTS-PUBLIC. No user manual has yet been created for these extended models. Interested users are referred to the listed journal articles and/or user examples below for more information.
-
-### Strain-hardening nonlinear normal contact
-
-An example of controlled collision between two spherical particles can be found at:
-
-`<repository>/examples/LIGGGHTS/INL/normal_contact_hysteretic_nonlinear1`
-
-The simulation result is shown in the following plot:
-
-<img src="figs/fig_nonlinear_contact.png">
-
-### Elastoplastic bond normal stiffness
-
-An example of macro-fiber made of five bonded spheres can be found at:
-
-`<repository>/examples/LIGGGHTS/INL/cohesive_bond_nonlinear_compression/chain_bending_mm_2`
-
-The simulation result is shown in the following plot:
-
-<img src="figs/fig_string_mm.png">
-
-
-An example of microfiber made of five bonded spheres can be found at:
-
-`<repository>/examples/LIGGGHTS/INL/cohesive_bond_nonlinear_compression/chain_bending_um_2`
-
-The simulation result is shown in the following plot:
-
-<img src="figs/fig_string_um.png">
-
-### Micro-biomechanics
-
-An example of compression test of a pine wood particle microstructural region of interest (ROI) can be found at:
-
-`<repository>/examples/LIGGGHTS/INL/microstructure_compression`
-
-The instantaneous snapshots of the simulation are shown in the following graph:
-
-<img src="figs/fig_microstructure_compression.png">
-
-
-## Instructions for Code Compilation
-
-We recommend Linux Ubuntu Long Term Service (LTS) releases. It might be the easiest platform, as all the prerequisites as well as the required configuration of the VTK library can be directly installed from Ubuntu's Software Center.
-
-### Linux Ubuntu 22.04 LTS
-
-Starting from this release, the installation requires more preparation steps, as the use of the default GCC and G++ (version 11) in this release would result in compilation errors. We recommend using GCC and G++ (version 9). Detailed command line instructions are provided below.
-
-**Install GCC and G++ (version 9) compilers and make the default version as 9**
-
-* Install gcc-9: `sudo apt-get install gcc-9`
-* Install g++-9: `sudo apt-get install g++-9`
-
-Use the update-alternatives tool to create a list of multiple GCC and G++ compiler alternatives
-
-* `sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9`
-* `sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9`
-* `sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11`
-* `sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11`
-
-Check the available C compilers list and select desired version by entering relevant selection number.
-
-* Enter the command: `sudo update-alternatives --config gcc`
-
->		There are 2 choices for the alternative gcc (providing /usr/bin/gcc).
->
->		Selection	Path			Priority	Status
->
->		------------------------------------------------------------
->
-> 		  0		/usr/bin/gcc-11		11		auto mode
->
->		  1		/usr/bin/gcc-11		11		manual mode
->
->		* 2		/usr/bin/gcc-9		9		manual mode
->
->		Press <enter> to keep the current choice[*], or type selection number:
-
-* In the example above, you should enter "2"
-
-Check the version of the C compiler: `gcc --version`. We only show the first line of the output.
-
-> gcc (Ubuntu 9.4.0-5ubuntu1) 9.4.0
-
-Check the available C++ compilers list and select desired version by entering relevant selection number.
-
-* Enter the command: `sudo update-alternatives --config g++`
-
->		There are 2 choices for the alternative g++ (providing /usr/bin/g++).
->
->		Selection	Path			Priority	Status
->
->		------------------------------------------------------------
->
-> 		  0		/usr/bin/g++-11		11		auto mode
->
->		  1		/usr/bin/g++-11		11		manual mode
->
->		* 2		/usr/bin/g++-9		9		manual mode
->
->		Press <enter> to keep the current choice[*], or type selection number:
-
-* In the example above, you should enter "2"
-
-Check the version of the C++ compiler: `g++ --version`. We only show the first line of the output.
-
-> g++ (Ubuntu 9.4.0-5ubuntu1) 9.4.0
-
-**Install OpenMPI and VTK 7.1**
-
-* Install OpenMPI: `sudo apt-get install libopenmpi-dev openmpi-bin`
-* Install VTK 7.1: `sudo apt-get install libvtk7-dev`
-
-**Compile the source code**
-
-* Navigate to `<repository>/src/`
-* Compile the code with VTK: `make -j4 mpi_ubuntu-22.04`
-* If compilation is successful, an executable will be generated: `lmp_mpi_ubuntu-22.04` 
-
-
-### Linux Ubuntu 20.04 LTS
-
-The command line instructions are below.
-
-* Install OpenMPI: `sudo apt-get install libopenmpi-dev openmpi-bin`
-* Install VTK 7.1: `sudo apt-get install libvtk7-dev`
-* Navigate to `<repository>/src/`
-* Compile the code with VTK: `make -j4 mpi_ubuntu-20.04`
-* If compilation is successful, an executable will be generated: `lmp_mpi_ubuntu-20.04` 
-
-### Other Linux distros
-
-Compilation on other Linux distros (e.g., CentOS) is not too different from on Ubuntu. A major difference is that the VTK 7.1 library may need to be compiled and installed manually. Users can follow the instruction for macOS.
-
-### macOS Monterey (Apple Silicon)
-
-[Updated June 30, 2022]
-
-*  The default C++ compiler (Apple clang version 13.1.6 (clang-1316.0.21.2.5)) would result in compilation errors. Homebrew does not have a GCC 9 compiler for Apple Silicon chip. Therefore, the code cannot be successfully compiled yet.
-*  VTK 7.1.1 manual compilation is successful.
-
-### macOS Catalina, Big Sur (Intel chip)
-
-* **Important**: Open a Terminal window. Change the default **zsh** to **bash**: `chsh -s /bin/bash`
-* Use Homebrew to install OpenMPI: `brew install open-mpi` 
-* Install VTK 7.1 manually. **Attention**: Do not use Homebrew to install VTK. VTK libraries from Homebrew were pre-built without some required options on (i.e., **MPI**). Without **MPI** on, some required libraries will be missing (vtkIOParallel, vtkIOParallel, vtkParallelCore, vtkParallelMPI, vtkIOParallelXML, etc.). We use `/opt/vtk` as an example of instalation directory to provide a detailed instruction of compiling the VTK 7.1 compilation. Additional prerequisite libraries may be needed on your system and can be installed from Homebrew.
-	* Create a folder: `sudo mkdir /opt/vtk`
-	* Download [https://www.vtk.org/files/release/7.1/VTK-7.1.1.zip](https://www.vtk.org/files/release/7.1/VTK-7.1.1.zip) to the `Downloads` directory.
-	* Unzip the zip file so you will see a folder `~/Downloads/VTK-7.1.1`.
-	* Create a new folder: `mkdir ~/Downloads/VTK-build`.
-	* Navigate to the new folder: `cd ~/Downloads/VTK-build`.
-	* Do: `ccmake ../VTK-7.1.1`. (If your system does not recognize the **ccmake** command, use Homebrew to install the **cmake** package.) You should see an interface like the screenshot below. <img src="figs/vtk/fig_cmake_1.png">
-	* Press [c] to **Configure**. If the configuration process completes without issue, you will see something similar to the snapshot below. If you encounter issues, which are usually warning messages of missing libraries, use Homebrew to install the missing libraries as indicated. <img src="figs/vtk/fig_cmake_2.png"> 
-	* Press [e] to exit screen. You will see something similar to the screenshot below.  <img src="figs/vtk/fig_cmake_3.png"> There are three options that we need to modify in the listed options. (1) Change the **CMAKE BUILD TYPE** value from **Debug** to **Release**. 2) Change the **CMAKE INSTALL PREFIX** value from whatever in there to **/opt/vtk**. (3) Change the **VTK Group MPI** value from **OFF** to **ON**. Then the screen should look similar to the screenshot below. <img src="figs/vtk/fig_cmake_4.png">
-	* Press [c] to **Configure** a 2nd time. If the configuration completes without issue, you should see **Configuring done** in the last line of screen output. Press [e] to exit screen.
-	* Press [c] to **Configure** a 3rd time. If the configuration completes without issue, you should see **Configuring done** in the last line of screen output. Press [e] to exit screen.
-	* Now you should see an extra key option **[g] Generate**. Press [g]. This will complete the whole configuration process and you will be out of CMake interface upon completion.
-	* Compile VTK with one CPU core: `make`, or multiple cores, e.g., `make -j4`. Upon completion, you should see something similar to the screenshot below. <img src="figs/vtk/fig_make.png">
-	* Install VTK to the designated installation directory: `sudo make install`.
-	* Add the location of VTK libraries to the system environment variable: `vi ~/.bash_profile` and add a line `export DYLD_LIBRARY_PATH=/opt/vtk/lib` in the file. Save and quit.
-* Open a new Terminal window and navigate to `<repository>/src/`
-* Compile the code with VTK: `make -j4 mpi_vtk-7.1`. 
-
-
 
 ## Other Software
 Idaho National Laboratory is a cutting edge research facility which is a constantly producing high quality research and software. Feel free to take a look at our other software and scientific offerings at:
@@ -237,82 +110,3 @@ Developers
 By contributing to this software project, you are agreeing to the following terms and conditions for your contributions:
 
 You agree your contributions are submitted under the GPL v2 license. You represent you are authorized to make the contributions and grant the license. If your employer has rights to intellectual property that includes your contributions, you represent that you have received permission to make contributions and grant the required license on behalf of that employer.
-
-# Content below is from LIGGGHTS
-----------------------------------------------------------------------
-This is the
-
-██╗     ██╗ ██████╗  ██████╗  ██████╗ ██╗  ██╗████████╗███████╗
-██║     ██║██╔════╝ ██╔════╝ ██╔════╝ ██║  ██║╚══██╔══╝██╔════╝
-██║     ██║██║  ███╗██║  ███╗██║  ███╗███████║   ██║   ███████╗
-██║     ██║██║   ██║██║   ██║██║   ██║██╔══██║   ██║   ╚════██║
-███████╗██║╚██████╔╝╚██████╔╝╚██████╔╝██║  ██║   ██║   ███████║
-╚══════╝╚═╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝®
-
-DEM simulation engine, released by 
-DCS Computing GmbH, Linz, Austria
-www.dcs-computing.com, office@dcs-computing.com
-
-LIGGGHTS® is open-source, distributed under the terms of the GNU Public 
-License, version 2 or later.
-
-LIGGGHTS® is part of CFDEM®project: 
-www.liggghts.com | www.cfdem.com
-
-Core developer and main author:
-Christoph Kloss, christoph.kloss@dcs-computing.com
-
-LIGGGHTS® and CFDEM® are registered trade marks of DCS Computing GmbH, 
-the producer of the LIGGGHTS® software and the CFDEM®coupling software
-See http://www.cfdem.com/terms-trademark-policy for details.
-
-----------------------------------------------------------------------
-Copyright 2012-     DCS Computing GmbH, Linz
-Copyright 2009-2015 JKU Linz
-Some parts of LIGGGHTS® are based on LAMMPS and Copyright on these
-parts is held by Sandia Corporation and other parties. Info on LAMMPS below
-Some parts of LIGGGHTS® are contributied by other parties, which are
-holding the Copyright. This is listed in each file of the distribution.
-----------------------------------------------------------------------
-
-The LIGGGHTS® distribution includes the following files and directories:
-
-README          this file
-LICENSE         the GNU General Public License (GPL)
-doc             documentation
-examples        simple example simulation setups
-lib             libraries LIGGGHTS® can be linked with
-python          Python wrapper on LIGGGHTS® as a library
-src             source files
-
-Point your browser at any of these files to get started:
-
-doc/Manual.html	           the manual
-doc/Section_intro.html	   hi-level introductio
-doc/Section_start.html	   how to build and use
-
-----------------------------------------------------------------------
-
-Some parts of LIGGGHTS® are based on LAMMPS
-LAMMPS stands for Large-scale Atomic/Molecular Massively Parallel
-Simulator. 
-
-LAMMPS is Copyright (2003) Sandia Corporation.  Under the terms of Contract
-DE-AC04-94AL85000 with Sandia Corporation, the U.S. Government retains
-certain rights in this software.  This software is distributed under
-the GNU General Public License.
-
-LAMMPS is a classical molecular dynamics simulation code designed to
-run efficiently on parallel computers.  It was developed at Sandia
-National Laboratories, a US Department of Energy facility, with
-funding from the DOE.  It is an open-source code, distributed freely
-under the terms of the GNU Public License (GPL).
-
-The primary author of LAMMPS is Steve Plimpton, who can be emailed
-at sjplimp@sandia.gov.  The LAMMPS WWW Site at lammps.sandia.gov has
-more information about the code and its uses.
-
-----------------------------------------------------------------------
-
-Core developer and main author of LIGGGHTS®:
-Christoph Kloss, christoph.kloss@dcs-computing.com

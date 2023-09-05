@@ -9,5 +9,9 @@ log.liggghts
 *.pdf
 *.plt
 *.data
+*.dat
 *.backup
+*.dump
+*.stl
+*.vtk
 src/log.liggghts
