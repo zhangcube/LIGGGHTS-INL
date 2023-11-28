@@ -130,7 +130,7 @@ void FixFreeze::post_force(int vflag)
   force_flag = 0;
 
   for (int i = 0; i < nlocal; i++)
-    if (mask[i] & groupbit) 
+    if (mask[i] & groupbit)  //zlf修改，freeze的判断标准
     {
       foriginal[0] += f[i][0];
       foriginal[1] += f[i][1];

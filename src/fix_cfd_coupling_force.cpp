@@ -85,6 +85,8 @@ FixCfdCouplingForce::FixCfdCouplingForce(LAMMPS *lmp, int narg, char **arg) : Fi
     registerProp("v",true,false,VECTOR);
     registerProp("radius",true,false,SCALAR);
     registerProp("dragforce",false,true,VECTOR);
+    registerProp("voidfraction",false,true,SCALAR);//zlf修改
+    registerProp("Ksl",false,true,SCALAR);//zlf修改
 
     bool hasargs = true;
     while(iarg < narg && hasargs)
