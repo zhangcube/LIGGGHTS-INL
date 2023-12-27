@@ -316,7 +316,7 @@ void MeshModuleStress::final_integrate()
 void MeshModuleStress::add_particle_contribution(int ip,double *frc,
                                 double *delta,int iTri,double *v_wall, double *contact_history)
 {
-    double E,v_rel[3],v_rel_mag,cos_gamma,sin_gamma,sin_2gamma,Q;
+    double E,v_rel[3],v_rel_mag,cos_gamma,sin_gamma,sin_2gamma;
     double contactPoint[3]={},surfNorm[3], tmp[3], tmp2[3];
 
     // do not include if not in fix group

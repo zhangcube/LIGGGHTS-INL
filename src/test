@@ -1,0 +1,27 @@
+    #include "vector.h"
+
+    double **dragforce_sum;
+    if (fix_dragforce_total_) dragforce_sum = fix_dragforce_total_->array_atom;//
+    else dragforce_sum = nullptr; // 初始化dragforce_sum数组
+
+    fix_dragforce_total_->set_all(0.0, true);
+    vectorZeroize3D(dragforce_total);
+    vectorZeroize3D(hdtorque_total);
+
+    // add dragforce to force vector
+    for (int i = 0; i < nlocal; i++)
+    {
+        if (mask[i] & groupbit)
+        {
+            vectorAdd3D(f[i], dragforce[i], f[i]);
+            if(use_torque_) vectorAdd3D(torque[i], hdtorque[i], torque[i]);
+            if (dragforce_sum) vectorAdd3D(dragforce_sum[i], dragforce[i], dragforce_sum[i]); // 使用前检查dragforce_sum是否为nullptr
+            if (fix_dragforce_implicit_) vectorAdd3D(dragforce_sum[i], dragforce_implicit[i], dragforce_sum[i]);
+            vectorAdd3D(dragforce_total, dragforce_sum[i], dragforce_total);
+            if(use_torque_)
+            {
+                vectorAdd3D(hdtorque_total,hdtorque[i],hdtorque_total);
+                if (fix_hdtorque_implicit_) vectorAdd3D(hdtorque_total,hdtorque_implicit[i],hdtorque_total);
+            }
+        }
+    }

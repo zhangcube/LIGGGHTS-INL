@@ -100,7 +100,7 @@ class FixCfdCouplingForce : public Fix  {
   double hdtorque_total[3];
 
   class FixCfdCoupling* fix_coupling_;
-
+  bool use_individualForce_;
   bool use_torque_;
   bool dragforce_implicit_;
 };

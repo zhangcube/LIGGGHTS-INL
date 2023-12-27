@@ -69,14 +69,13 @@ FixCfdCouplingForce::FixCfdCouplingForce(LAMMPS *lmp, int narg, char **arg) : Fi
     fix_hdtorque_(0),
     fix_hdtorque_implicit_(0),
     fix_coupling_(0),
+    use_individualForce_(false),	
     use_torque_(false),
     dragforce_implicit_(true)
 {
     iarg = 3;
-
     //check if style is not /implicit
     if (strcmp(style,"couple/cfd/force/implicit") == 0) error->fix_error(FLERR,this,"old fix style couple/cfd/force/implicit used, which is no longer supported.\nPlease use the regular couple/cfd/force and the fix/nve/cfd_cn/ class integrators for implicit drag handling.");
-
     // register props, which are always used -> x v r
     //std::string propName, bool push, bool pull, enum type:
     //{SCALAR,VECTOR,VECTOR2D,QUATERNION,SCALARMULTISPHERE,VECTORMULTISPHERE,SCALARGLOB,VECTORGLOB,MATRIXGLOB}
@@ -85,8 +84,6 @@ FixCfdCouplingForce::FixCfdCouplingForce(LAMMPS *lmp, int narg, char **arg) : Fi
     registerProp("v",true,false,VECTOR);
     registerProp("radius",true,false,SCALAR);
     registerProp("dragforce",false,true,VECTOR);
-    registerProp("voidfraction",false,true,SCALAR);//zlf修改
-    registerProp("Ksl",false,true,SCALAR);//zlf修改
 
     bool hasargs = true;
     while(iarg < narg && hasargs)
@@ -103,6 +100,20 @@ FixCfdCouplingForce::FixCfdCouplingForce(LAMMPS *lmp, int narg, char **arg) : Fi
             iarg++;
             hasargs = true;
         }
+		else if(strcmp(arg[iarg],"transfer_individualForce") == 0)
+		{
+			if(narg < iarg+2)
+				error->fix_error(FLERR,this,"not enough arguments for 'transfer_individualForce'");
+			iarg++;
+			if(strcmp(arg[iarg],"yes") == 0)
+				use_individualForce_ = true;
+			else if(strcmp(arg[iarg],"no") == 0)
+				use_individualForce_ = false;
+			else
+				error->fix_error(FLERR,this,"expecting 'yes' or 'no' after 'transfer_individualForce'");
+			iarg++;
+			hasargs = true;
+		}
         else if(strcmp(arg[iarg],"torque") == 0)
         {
             if(narg < iarg+2)
@@ -234,7 +245,14 @@ FixCfdCouplingForce::FixCfdCouplingForce(LAMMPS *lmp, int narg, char **arg) : Fi
         registerProp("uf",false,true,VECTOR);
         registerProp("dragforce_implicit",false,false,VECTOR);
     }
-
+	if (use_individualForce_)
+    {
+        registerProp("gradPForce",false,true,VECTOR);
+        registerProp("viscForce",false,true,VECTOR);
+        registerProp("dragOnlyForce",false,true,VECTOR);
+		registerProp("liftForce",false,true,VECTOR);
+		registerProp("interfaceForce",false,true,VECTOR);
+    }
     if (force->typeSpecificCG()) registerProp("type",true,false,SCALAR);
 
     // flags for vector output
