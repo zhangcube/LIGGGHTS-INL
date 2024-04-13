@@ -65,6 +65,8 @@ struct SurfacesCloseData {
   double radsum;
   double rsq;
   double delta[3];  
+  double nonConDeltan;
+  double nonConr;
 
   double area_ratio;
 

@@ -190,6 +190,7 @@ public:
     sidata.omega_i = omega;
 
     sidata.r = sidata.radi - sidata.deltan; // sign corrected, because negative value is passed
+	  sidata.nonConr = sidata.radi + sidata.nonConDeltan;
     sidata.rsq = sidata.r*sidata.r;
     const double rinv = 1.0/sidata.r;
     sidata.rinv = rinv;
