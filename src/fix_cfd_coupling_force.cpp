@@ -253,6 +253,7 @@ FixCfdCouplingForce::FixCfdCouplingForce(LAMMPS *lmp, int narg, char **arg) : Fi
 		registerProp("liftForce",false,true,VECTOR);
         registerProp("virtualMassForce",false,true,VECTOR);
 		registerProp("interfaceForce",false,true,VECTOR);
+        registerProp("Archimedes",false,true,VECTOR);
     }
     if (force->typeSpecificCG()) registerProp("type",true,false,SCALAR);
 
